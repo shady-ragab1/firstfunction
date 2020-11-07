@@ -3,17 +3,17 @@ package com.shady.functionpoc.firstfunction;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.function.Function;
 
-@SpringBootApplication
-public class FirstfunctionApplication {
+@Configuration
+public class FirstfunctionConfiguration {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FirstfunctionApplication.class, args);
+	@Bean
+	public Function<String, String> uppercase() {
+		return value -> {
+			return value.toUpperCase();
+		};
 	}
-
-
-
-
 }

@@ -21,9 +21,8 @@ class FirstfunctionApplicationIntegrationTests {
 	public void test() throws Exception {
 
 		String resposne =  rest.postForObject(new URI("/uppercase"),"hello",String.class);
+		assertThat(resposne).isEqualTo("HELLO");
 
-
-		System.out.println(resposne);
 	}
 
 }
